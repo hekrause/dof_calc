@@ -3,7 +3,6 @@ language: rust
 sudo: false
 rust:
   - stable
-  - beta
   - nightly
 env:
   - DENYWARNINGS=
@@ -14,5 +13,3 @@ matrix:
       env: BENCHMARK=1
   allow_failures:
     - rust: nightly
-    - rust: beta
-      env: DENYWARNINGS=1
