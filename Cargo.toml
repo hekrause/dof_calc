@@ -4,3 +4,4 @@ version = "0.1.0"
 authors = ["hekrause <hekrause@htwg-konstanz.de>"]
 
 [dependencies]
+measurements = { git = "https://github.com/hekrause/rust-measurements.git" }
