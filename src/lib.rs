@@ -1,10 +1,14 @@
 
+#[macro_use]
+extern crate serde_derive;
+extern crate serde;
+extern crate serde_json;
 extern crate measurements;
 
 use measurements::Measurement;
 use measurements::{Length, Aperture};
 
-#[derive(Debug)]
+#[derive(PartialEq, Serialize, Deserialize, Debug)]
 pub struct Input {
     focal_length: Length,
     focus_distance: Length,
@@ -12,7 +16,7 @@ pub struct Input {
     circle_of_confusion: Length,
 }
 
-#[derive(Debug)]
+#[derive(PartialEq, Serialize, Deserialize, Debug)]
 pub struct Output {
     hyperfocal_distance: Length,
     hyperfocal_near_limit: Length,
@@ -24,7 +28,7 @@ pub struct Output {
 }
 
 impl Input {
-    pub fn new(f_len: Length, f_dis: Length, f_num: Aperture, coc: Length) -> Self {
+    pub fn new_from_raw(f_len: Length, f_dis: Length, f_num: Aperture, coc: Length) -> Self {
         Input {
             focal_length: f_len,
             focus_distance: f_dis,
