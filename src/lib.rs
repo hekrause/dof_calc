@@ -7,6 +7,7 @@ extern crate measurements;
 
 use measurements::Measurement;
 use measurements::{Length, Aperture};
+use std::fmt;
 
 #[derive(PartialEq, Serialize, Deserialize, Debug)]
 pub struct Input {
@@ -83,7 +84,6 @@ impl Output {
     }
 
     fn calc_hyperfocal_distance(f_len: &Length, f_num: &Aperture, coc: &Length) -> Length {
-        // println!("{};{}", f_len.as_millimeters(), );
         Length::from_base_units(((f_len.as_base_units() * f_len.as_base_units()) /
                                  (f_num.as_base_units() * coc.as_base_units()) +
                                  f_len.as_base_units()))

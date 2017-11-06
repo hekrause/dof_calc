@@ -14,8 +14,19 @@ fn work() {
                                     Aperture::from_aperture_number(2.0),
                                     Length::from_micrometers(20.0));
     let output = Output::calc(input);
+    println!("{:#?}", output);
 }
 
+/*
+#[test]
+fn test_format_value() {
+    let len = Length::from_kilometers(0.01);
+    let new = Output::format_value(len);
+    println!("{:#?}", new);
+}
+*/
+
+/*
 #[test]
 fn json_input() {
     let input = Input::new_from_raw(Length::from_millimeters(50.0),
@@ -58,6 +69,7 @@ fn json_output() {
                             \"in_front_of_object\":{\"meters\":0.005233941316415525},\
                             \"behind_object\":{\"meters\":0.0053268765133172028}\
                             }");
-    
+
     let deserialized: Output = serde_json::from_str(&serialized).unwrap();
 }
+*/
