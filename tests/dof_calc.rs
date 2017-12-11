@@ -15,14 +15,6 @@ fn work() {
     let _output = Output::calc(input);
 }
 
-/*
-#[test]
-fn test_format_value() {
-    let len = Length::from_kilometers(0.01);
-    let new = Output::format_value(len);
-    println!("{:#?}", new);
-}
-
 #[test]
 fn json_input() {
     let input = Input::new_from_raw(Length::from_millimeters(50.0),
@@ -66,6 +58,5 @@ fn json_output() {
                             \"behind_object\":{\"meters\":0.0053268765133172028}\
                             }");
 
-    let deserialized: Output = serde_json::from_str(&serialized).unwrap();
+    let _deserialized: Output = serde_json::from_str(&serialized).unwrap();
 }
-*/
